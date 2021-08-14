@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Checkout from './components/Checkout/Checkout';
 import Header from './components/Header/Header';
+import NotFound from './components/NotFound/NotFound';
 import Orders from './components/Orders/Orders';
 import Products from './components/Products/Products';
 
@@ -15,6 +15,9 @@ const App = () => {
 				</Route>
 				<Route path='/orders'>
 					<Orders />
+				</Route>
+				<Route path='*'>
+					<NotFound />
 				</Route>
 			</Switch>
 		</div>
