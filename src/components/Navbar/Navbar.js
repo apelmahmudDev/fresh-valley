@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
 	return (
 		<>
-			<nav class='navbar navbar-expand-lg navbar-light'>
-				<Link class='navbar-brand text-dark text-uppercase fw-bold' to='/home'>
+			<nav className='navbar navbar-expand-lg navbar-light'>
+				<Link
+					className='navbar-brand text-dark text-uppercase fw-bold'
+					to='/home'
+				>
 					Fresh Valley
 				</Link>
 				<button
-					class='navbar-toggler'
+					className='navbar-toggler'
 					type='button'
 					data-bs-toggle='collapse'
 					data-bs-target='#navbarNavAltMarkup'
@@ -17,28 +20,28 @@ const Navbar = () => {
 					aria-expanded='false'
 					aria-label='Toggle navigation'
 				>
-					<span class='navbar-toggler-icon'></span>
+					<span className='navbar-toggler-icon'></span>
 				</button>
-				<div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
-					<div class='navbar-nav ms-auto'>
+				<div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
+					<div className='navbar-nav ms-auto'>
 						<Link
-							class='nav-link active text-dark mx-3'
+							className='nav-link active text-dark mx-3'
 							aria-current='page'
 							to='/home'
 						>
 							Home
 						</Link>
-						<Link class='nav-link text-dark mx-3' to='/orders'>
+						<Link className='nav-link text-dark mx-3' to='/orders'>
 							Orders
 						</Link>
-						<Link class='nav-link text-dark mx-3' to='/admin'>
+						<Link className='nav-link text-dark mx-3' to='/admin'>
 							Admin
 						</Link>
-						<Link class='nav-link text-dark mx-3' to='/deals'>
+						<Link className='nav-link text-dark mx-3' to='/deals'>
 							Deals
 						</Link>
 						<Link
-							class='nav-link text-white mx-3 bg-success px-3 py-2 rounded'
+							className='nav-link text-white mx-3 bg-success px-3 py-2 rounded'
 							to='/login'
 						>
 							Login

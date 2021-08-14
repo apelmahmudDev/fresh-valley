@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
+import Products from './components/Products/Products';
 
 const App = () => {
 	return (
@@ -8,7 +9,7 @@ const App = () => {
 			<Switch>
 				<Route path='/'>
 					<Header />
-					<h1>Fresh Valley</h1>
+					<Products />
 				</Route>
 			</Switch>
 		</div>
