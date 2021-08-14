@@ -2,6 +2,7 @@ import React from 'react';
 
 const Product = (props) => {
 	const { name, price, img } = props.product;
+
 	return (
 		<div className='col'>
 			<div className='card h-100 shadow border-0 py-4'>

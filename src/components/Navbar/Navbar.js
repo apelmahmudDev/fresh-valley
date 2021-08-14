@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Navbar = () => {
+	const { user } = useContext(UserContext);
 	return (
 		<>
-			<nav className='navbar navbar-expand-lg navbar-light'>
+			<nav className='navbar navbar-expand-lg navbar-light my-4'>
 				<Link className='navbar-brand text-dark text-uppercase fw-bold' to='/'>
 					Fresh Valley
 				</Link>
@@ -37,12 +39,25 @@ const Navbar = () => {
 						<Link className='nav-link text-dark mx-3' to='/deals'>
 							Deals
 						</Link>
-						<Link
-							className='nav-link text-white mx-3 bg-success px-3 py-2 rounded'
-							to='/login'
-						>
-							Login
-						</Link>
+						{/* user info */}
+						{user.isLoggedIn ? (
+							<div style={{ width: '50px' }}>
+								<img
+									style={{ cursor: 'pointer' }}
+									className='d-block h-100 img-fluid rounded-circle shadow-sm border border-2'
+									src={user.isLoggedIn && user.photo}
+									alt='user'
+									title={user.name}
+								/>
+							</div>
+						) : (
+							<Link
+								className='nav-link text-white mx-3 bg-success px-3 py-2 rounded'
+								to='/login'
+							>
+								Login
+							</Link>
+						)}
 					</div>
 				</div>
 			</nav>

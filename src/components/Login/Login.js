@@ -4,6 +4,7 @@ import 'firebase/auth';
 import firebaseConfig from '../../firebase';
 import { UserContext } from '../../App';
 import google from '../../images/google.svg';
+import { useHistory } from 'react-router-dom';
 
 // Initialize Firebase
 if (!firebase.apps.length) {
@@ -14,8 +15,8 @@ if (!firebase.apps.length) {
 const provider = new firebase.auth.GoogleAuthProvider();
 
 const Login = () => {
-	const { user, setUser } = useContext(UserContext);
-	console.log(user);
+	const { setUser } = useContext(UserContext);
+	let history = useHistory();
 
 	const userHandler = () => {
 		firebase
@@ -28,8 +29,10 @@ const Login = () => {
 					name: user.displayName,
 					email: user.email,
 					photo: user.photoURL,
+					isLoggedIn: true,
 				};
 				setUser(newUser);
+				history.push('/orders');
 			})
 			.catch((error) => {
 				// Handle Errors here.
