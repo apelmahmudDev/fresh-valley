@@ -5,10 +5,7 @@ const Navbar = () => {
 	return (
 		<>
 			<nav className='navbar navbar-expand-lg navbar-light'>
-				<Link
-					className='navbar-brand text-dark text-uppercase fw-bold'
-					to='/home'
-				>
+				<Link className='navbar-brand text-dark text-uppercase fw-bold' to='/'>
 					Fresh Valley
 				</Link>
 				<button
@@ -27,7 +24,7 @@ const Navbar = () => {
 						<Link
 							className='nav-link active text-dark mx-3'
 							aria-current='page'
-							to='/home'
+							to='/'
 						>
 							Home
 						</Link>
