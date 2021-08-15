@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Product = (props) => {
-	const { name, price, img } = props.product;
+	const { name, price, img, id } = props.product;
+	const { buyProductHandler } = props;
 
 	return (
 		<div className='col'>
@@ -18,7 +19,10 @@ const Product = (props) => {
 							<span className='fw-bolder me-1'> &#2547;</span>
 							{price}
 						</h4>
-						<button className='btn-success px-2 py-1 text-white border-0  rounded'>
+						<button
+							onClick={() => buyProductHandler(id)}
+							className='btn-success px-2 py-1 text-white border-0  rounded'
+						>
 							Buy Now
 						</button>
 					</div>
