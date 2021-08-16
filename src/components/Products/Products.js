@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import Product from '../Product/Product';
 
 const Products = () => {
 	const [products, setProducts] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	// fetch products
 	useEffect(() => {
+		setIsLoading(true);
 		fetch('http://localhost:5000/products')
 			.then((res) => res.json())
-			.then((data) => setProducts(data))
-			.catch((error) => console.log('error', error));
+			.then((data) => {
+				setProducts(data);
+				setIsLoading(false);
+			})
+			.catch((error) => {
+				console.log('error', error);
+				setIsLoading(false);
+			});
 	}, []);
 
 	// product add to database
@@ -32,14 +41,20 @@ const Products = () => {
 	};
 
 	return (
-		<div className='container my-5 mx-auto row row-cols-1 row-cols-md-3 g-4'>
-			{products.map((product) => (
-				<Product
-					key={product.id}
-					product={product}
-					buyProductHandler={buyProductHandler}
-				/>
-			))}
+		<div>
+			{isLoading ? (
+				<LoadingSpin />
+			) : (
+				<div className='container my-5 mx-auto row row-cols-1 row-cols-md-3 g-4'>
+					{products.map((product) => (
+						<Product
+							key={product.id}
+							product={product}
+							buyProductHandler={buyProductHandler}
+						/>
+					))}
+				</div>
+			)}
 		</div>
 	);
 };
