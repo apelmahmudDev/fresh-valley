@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import DashboardMenu from '../DashboardMenu/DashboardMenu';
+import { Link, Route } from 'react-router-dom';
+import DashboardMenu from './DashboardMenu/DashboardMenu';
+import MangeProducts from './MangeProducts/MangeProducts';
 
 const Dashboard = () => {
 	return (
@@ -14,7 +15,15 @@ const Dashboard = () => {
 					<DashboardMenu />
 				</Link>
 			</div>
-			<div className='col-md-10'>Right column</div>
+			{/* Route */}
+			<div className='col-md-10' style={{ background: '#F4FCFB' }}>
+				<Route exact path='/admin'>
+					<MangeProducts />
+				</Route>
+				<Route path='/admin/manage-product'>
+					<MangeProducts />
+				</Route>
+			</div>
 		</div>
 	);
 };

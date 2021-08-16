@@ -14,7 +14,7 @@ const DashboardMenu = () => {
 			<ul className='list-unstyled'>
 				<li className='my-4 py-1 w-100' style={{ background: '#2D524A' }}>
 					<Link
-						to='/manage-product'
+						to='/admin/manage-product'
 						className='text-decoration-none text-white d-block ps-4'
 					>
 						<FontAwesomeIcon icon={faThLarge} className='me-2' />
