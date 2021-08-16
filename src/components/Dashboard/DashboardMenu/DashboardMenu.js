@@ -1,5 +1,4 @@
 import {
-	faPenAlt,
 	faPencilAlt,
 	faPlus,
 	faThLarge,
