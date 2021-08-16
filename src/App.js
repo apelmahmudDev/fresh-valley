@@ -2,6 +2,7 @@ import React, { createContext, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
+import Dashboard from './components/Dashboard/Dashboard';
 import NotFound from './components/NotFound/NotFound';
 import Orders from './components/Orders/Orders';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -24,6 +25,9 @@ const App = () => {
 				</PrivateRoute>
 				<Route path='/login'>
 					<Login />
+				</Route>
+				<Route path='/admin'>
+					<Dashboard />
 				</Route>
 				<Route path='*'>
 					<NotFound />
