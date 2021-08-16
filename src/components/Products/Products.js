@@ -6,16 +6,10 @@ const Products = () => {
 
 	// fetch products
 	useEffect(() => {
-		const fetchAllProducts = async () => {
-			try {
-				const response = await fetch('http://localhost:5000/products');
-				const data = await response.json();
-				setProducts(data);
-			} catch (error) {
-				console.log('error', error);
-			}
-		};
-		fetchAllProducts();
+		fetch('http://localhost:5000/products')
+			.then((res) => res.json())
+			.then((data) => setProducts(data))
+			.catch((error) => console.log('error', error));
 	}, []);
 
 	// product add to database
@@ -25,23 +19,16 @@ const Products = () => {
 		fetchAddProduct(buyingProduct);
 	};
 
-	const fetchAddProduct = async (product) => {
-		try {
-			const config = {
-				method: 'POST',
-				headers: {
-					Accept: 'application/json',
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(product),
-			};
-			const response = await fetch('http://localhost:5000/addProduct', config);
-			if (response.ok) {
-				return response;
-			}
-		} catch (error) {
-			console.log('error', error);
-		}
+	const fetchAddProduct = (product) => {
+		fetch('http://localhost:5000/addProduct', {
+			method: 'POST',
+			body: JSON.stringify(product),
+			headers: {
+				'Content-type': 'application/json; charset=UTF-8',
+			},
+		})
+			.then((response) => response.json())
+			.then((data) => console.log(data));
 	};
 
 	return (

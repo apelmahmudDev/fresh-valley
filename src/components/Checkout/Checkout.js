@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import random from 'random';
 
 const Checkout = () => {
+	const [products, setProducts] = useState([]);
+
+	// fetching cart products from db
+	useEffect(() => {
+		fetch('http://localhost:5000/cartProducts')
+			.then((res) => res.json())
+			.then((data) => setProducts(data))
+			.catch((error) => console.error('error', error));
+	}, []);
+
+	// total cart product price
+	let totalPrice = 0;
+	if (products.length > 0) {
+		totalPrice = products.reduce((sum, product) => sum + product.price, 0);
+	}
+
 	return (
 		<div className='container'>
 			<h2 className='text-dark my-4'>Checkout</h2>
@@ -20,21 +37,23 @@ const Checkout = () => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Lorem ipsum dolor sit</td>
-							<td className='ps-4'>1</td>
-							<td className='text-end fw-bold'>
-								<span className='fw-bolder me-1'> &#2547;</span>
-								<span>345</span>
-							</td>
-						</tr>
+						{products.map((product) => (
+							<tr key={random.int(0, 100)}>
+								<td>{product.name}</td>
+								<td className='ps-4'>{product.quantity}</td>
+								<td className='text-end fw-bold'>
+									<span className='fw-bolder me-1'> &#2547;</span>
+									<span>{product.price}</span>
+								</td>
+							</tr>
+						))}
 						<tr className='border-top'>
 							<td colSpan='2' className=' fw-bold'>
 								Total
 							</td>
 							<td className='text-end fw-bold'>
 								<span className='fw-bolder me-1'> &#2547;</span>
-								<span>345</span>
+								<span>{totalPrice}</span>
 							</td>
 						</tr>
 					</tbody>

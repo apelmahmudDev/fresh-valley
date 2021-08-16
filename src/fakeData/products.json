@@ -4,54 +4,63 @@
 			"id": 12341,
 			"name": "Marks Full Cream Milk Powder Foil",
 			"price": 234,
+			"quantity": 1,
 			"img": "https://i.imgur.com/yQkDtyS.png"
 		},
 		{
 			"id": 12342,
 			"name": "Moushum Bay Leaves- 200gm",
 			"price": 134,
+			"quantity": 1,
 			"img": "https://i.imgur.com/mAORvJ6.png"
 		},
 		{
 			"id": 12343,
 			"name": "Onion Local - 1 Kg",
 			"price": 434,
+			"quantity": 1,
 			"img": "https://i.imgur.com/1lDa9He.png"
 		},
 		{
 			"id": 12344,
 			"name": "Rashid Minicate Rice - 50 Kg",
 			"price": 336,
+			"quantity": 1,
 			"img": "https://i.imgur.com/e3TFjf3.png"
 		},
 		{
 			"id": 12345,
 			"name": "Omera LPG Refill 12 KG",
 			"price": 360,
+			"quantity": 1,
 			"img": "https://i.imgur.com/AmVecRL.png"
 		},
 		{
 			"id": 12346,
 			"name": "Bombay Sweets Mr.Twist– 25 gm",
 			"price": 132,
+			"quantity": 1,
 			"img": "https://i.imgur.com/uqymg8s.png"
 		},
 		{
 			"id": 12347,
 			"name": "Lifeboy Soap Bar Tota - 100 gm",
 			"price": 180,
+			"quantity": 1,
 			"img": "https://i.imgur.com/q4WpVqG.png"
 		},
 		{
 			"id": 12348,
 			"name": "Ruchi BBQ Chanachur - 350 gm",
 			"price": 199,
+			"quantity": 1,
 			"img": "https://i.imgur.com/MW8AJAk.png"
 		},
 		{
 			"id": 12349,
 			"name": "Parachute Coconut Oil - 200ml",
 			"price": 126,
+			"quantity": 1,
 			"img": "https://i.imgur.com/RpcOqVh.png"
 		}
 	]
