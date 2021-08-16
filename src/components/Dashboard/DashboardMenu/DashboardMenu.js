@@ -23,7 +23,7 @@ const DashboardMenu = () => {
 				</li>
 				<li className='my-4 py-1 w-100' style={{ background: '#2D524A' }}>
 					<Link
-						to='/add-product'
+						to='/admin/add-product'
 						className='text-decoration-none text-white d-block ps-4'
 					>
 						<FontAwesomeIcon icon={faPlus} className='me-2' />

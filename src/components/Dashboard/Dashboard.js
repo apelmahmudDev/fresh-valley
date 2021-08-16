@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
+import AddProduct from './AddProduct/AddProduct';
 import DashboardMenu from './DashboardMenu/DashboardMenu';
 import MangeProducts from './MangeProducts/MangeProducts';
 
@@ -22,6 +23,9 @@ const Dashboard = () => {
 				</Route>
 				<Route path='/admin/manage-product'>
 					<MangeProducts />
+				</Route>
+				<Route path='/admin/add-product'>
+					<AddProduct />
 				</Route>
 			</div>
 		</div>

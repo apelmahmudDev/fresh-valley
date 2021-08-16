@@ -6,7 +6,7 @@ const MangeProducts = () => {
 	return (
 		<div className='mt-4'>
 			<h4 className='text-dark ps-1'>Manage Product</h4>
-			<table class='table table-borderless bg-white'>
+			<table class='table table-borderless bg-white mt-3'>
 				<thead>
 					<tr className='rounded' style={{ background: '#F5F6FA' }}>
 						<th scope='col'>Product Name</th>
