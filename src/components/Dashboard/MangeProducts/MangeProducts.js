@@ -11,7 +11,7 @@ const MangeProducts = () => {
 	// fetching cart products from db
 	useEffect(() => {
 		setIsLoading(true);
-		fetch('http://afternoon-shore-15602.herokuapp.com/cartProducts')
+		fetch('https://afternoon-shore-15602.herokuapp.com/cartProducts')
 			.then((res) => res.json())
 			.then((data) => {
 				setProducts(data);
@@ -25,7 +25,7 @@ const MangeProducts = () => {
 
 	// delete Product Handler
 	const deleteProductHandler = (id) => {
-		fetch(`http://afternoon-shore-15602.herokuapp.com/delete/${id}`, {
+		fetch(`https://afternoon-shore-15602.herokuapp.com/delete/${id}`, {
 			method: 'DELETE',
 		})
 			.then((res) => res.json())
