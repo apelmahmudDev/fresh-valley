@@ -37,7 +37,13 @@ const Products = () => {
 			},
 		})
 			.then((response) => response.json())
-			.then((data) => console.log(data));
+			.then((data) => {
+				if (data) {
+					console.log('Product added successfully');
+				} else {
+					console.log('Product already added');
+				}
+			});
 	};
 
 	return (

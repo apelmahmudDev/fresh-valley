@@ -66,6 +66,11 @@ const AddProduct = () => {
 						</div>
 					</div>
 				</div>
+				<div className='text-end'>
+					<button className='border-0 btn-warning px-4 py-2 rounded text-white'>
+						Save
+					</button>
+				</div>
 			</div>
 		</div>
 	);

@@ -32,7 +32,7 @@ const Login = () => {
 					isLoggedIn: true,
 				};
 				setUser(newUser);
-				history.push('/orders');
+				history.push('/');
 			})
 			.catch((error) => {
 				// Handle Errors here.

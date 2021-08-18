@@ -23,6 +23,19 @@ const MangeProducts = () => {
 			});
 	}, []);
 
+	// delete Product Handler
+	const deleteProductHandler = (id) => {
+		fetch(`http://localhost:5000/delete/${id}`, {
+			method: 'DELETE',
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data) {
+					window.location.reload();
+				}
+			});
+	};
+
 	return (
 		<div className='mt-4'>
 			<h4 className='text-dark ps-1'>Manage Product</h4>
@@ -51,7 +64,10 @@ const MangeProducts = () => {
 											className='text-white'
 										/>
 									</button>
-									<button className='btn-danger border-0 rounded'>
+									<button
+										onClick={() => deleteProductHandler(product._id)}
+										className='btn-danger border-0 rounded'
+									>
 										<FontAwesomeIcon icon={faTrashAlt} className='text-white' />
 									</button>
 								</td>

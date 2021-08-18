@@ -7,6 +7,7 @@ import NotFound from './components/NotFound/NotFound';
 import Orders from './components/Orders/Orders';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Products from './components/Products/Products';
+import Search from './components/Search/Search';
 
 // context
 export const UserContext = createContext();
@@ -18,17 +19,18 @@ const App = () => {
 			<Switch>
 				<Route exact path='/'>
 					<Header />
+					<Search />
 					<Products />
 				</Route>
-				<PrivateRoute path='/orders'>
+				<Route path='/orders'>
 					<Orders />
-				</PrivateRoute>
+				</Route>
 				<Route path='/login'>
 					<Login />
 				</Route>
-				<Route path='/admin'>
+				<PrivateRoute path='/admin'>
 					<Dashboard />
-				</Route>
+				</PrivateRoute>
 				<Route path='*'>
 					<NotFound />
 				</Route>
