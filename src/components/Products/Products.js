@@ -9,7 +9,7 @@ const Products = () => {
 	// fetch products
 	useEffect(() => {
 		setIsLoading(true);
-		fetch('http://localhost:5000/products')
+		fetch('http://afternoon-shore-15602.herokuapp.com/products')
 			.then((res) => res.json())
 			.then((data) => {
 				setProducts(data);
@@ -29,7 +29,7 @@ const Products = () => {
 	};
 
 	const fetchAddProduct = (product) => {
-		fetch('http://localhost:5000/addProduct', {
+		fetch('http://afternoon-shore-15602.herokuapp.com/addProduct', {
 			method: 'POST',
 			body: JSON.stringify(product),
 			headers: {

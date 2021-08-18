@@ -9,7 +9,7 @@ const Checkout = () => {
 	// fetching cart products from db
 	useEffect(() => {
 		setIsLoading(true);
-		fetch('http://localhost:5000/cartProducts')
+		fetch('http://afternoon-shore-15602.herokuapp.com/cartProducts')
 			.then((res) => res.json())
 			.then((data) => {
 				setProducts(data);
